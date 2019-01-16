@@ -1,0 +1,25 @@
+#!/bin/bash
+
+file_system_element=$1
+
+# reset file permissions
+chmod 444 $file_system_element
+
+# set basic file permissions
+chown apache:apache $file_system_element
+chmod 664 $file_system_element
+
+# recursively set permissions if directory
+if [[ -d $file_system_element ]]; then
+  # set correct ownership of sub-elements
+  chown -R apache:apache $file_system_element/*
+
+  # set basic directory permissions
+  chmod 775 $file_system_element
+
+  # set permissions of sub-directories
+  find $file_system_element -type d -exec chmod 775 {} \;
+
+  # set permissions of files
+  find $file_system_element -type f -exec chmod 664 {} \;
+fi

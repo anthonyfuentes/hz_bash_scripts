@@ -1,0 +1,5 @@
+#!/bin/bash
+
+target_directory=$HUB_WEBROOT/$2
+
+cd $target_directory

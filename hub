@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#############################
+# Set HUB_WEBROOT if absent #
+#############################
+if [ -z "$HUB_WEBROOT" ]; then
+  source ~/.bin/.env
+  export HUB_WEBROOT=$PROD_WEBROOT
+fi
+
+if [ $1 == 'dev' ]; then
+  export HUB_WEBROOT=$DEV_WEBROOT
+fi
+
+######################
+# Run correct script #
+######################
+if [ $1 == 'mysql' ]; then
+  . ~/.bin/hub_mysql "$@"
+elif [ $1 == 'cd' ]; then
+  . ~/.bin/hub_cd "$@"
+fi
