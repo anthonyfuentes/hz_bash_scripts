@@ -1,0 +1,5 @@
+#!/bin/bash
+
+error_log_path=$HUB_WEBROOT/$ERROR_LOG
+
+tail -f $error_log_path
