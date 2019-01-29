@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source ~/.bin/.env
+
+if [ -z "$HUB_WEBROOT" ]; then
+  export HUB_WEBROOT=$PROD_WEBROOT
+fi
+
+if [ $1 == 'dev' ]; then
+  export HUB_WEBROOT=$DEV_WEBROOT
+fi
