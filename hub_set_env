@@ -9,3 +9,7 @@ fi
 if [ $1 == 'dev' ]; then
   export HUB_WEBROOT=$DEV_WEBROOT
 fi
+
+if [ $1 == 'qa' ]; then
+  export HUB_WEBROOT=$QA_WEBROOT
+fi
