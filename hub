@@ -7,11 +7,11 @@ case "$1" in
   cd)
     command=~/.bin/hub_cd
     ;;
+  db)
+    command=~/.bin/hub_db
+    ;;
   errors)
     command=~/.bin/hub_errors
-    ;;
-  mysql)
-    command=~/.bin/hub_mysql
     ;;
   *)
     command=~/.bin/hub_set_env
