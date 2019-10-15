@@ -1,3 +1,11 @@
 #!/bin/bash
 
-mysql --defaults-extra-file=/etc/mysql/hubmaint.cnf
+hub_config_path=$HUB_WEBROOT/app/config/database.php
+
+config_text="$(cat $hub_config_path)"
+
+user=$(awk -F "=>" '/'user'/ {print $2}' $hub_config_path | grep -oEi "[a-z]+")
+
+password=$(awk -F "=>" '/'password'/ {print $2}' $hub_config_path | grep -oEi "[a-z0-9]+")
+
+mysql -u $user -p$password
