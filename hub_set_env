@@ -2,14 +2,19 @@
 
 source ~/.bin/.env
 
-if [ -z "$HUB_WEBROOT" ]; then
-  export HUB_WEBROOT=$PROD_WEBROOT
-fi
+case $1 in
+  dev)
+    webroot=$DEV_WEBROOT
+    ;;
+  qa)
+    webroot=$QA_WEBROOT
+    ;;
+  stage)
+    webroot=$STAGE_WEBROOT
+    ;;
+  '')
+    webroot=$PROD_WEBROOT
+    ;;
+esac
 
-if [ $1 == 'dev' ]; then
-  export HUB_WEBROOT=$DEV_WEBROOT
-fi
-
-if [ $1 == 'qa' ]; then
-  export HUB_WEBROOT=$QA_WEBROOT
-fi
+export HUB_WEBROOT=$webroot
