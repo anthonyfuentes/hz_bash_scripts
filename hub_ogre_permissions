@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo /usr/share/adm/scripts/check_group_access_php.py

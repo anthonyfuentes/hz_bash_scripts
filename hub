@@ -13,6 +13,9 @@ case "$1" in
   errors)
     script=hub_errors
     ;;
+  permissions)
+    script=hub_ogre_permissions
+    ;;
   *)
     script=hub_set_env
     ;;
