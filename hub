@@ -5,17 +5,17 @@
 ######################
 case "$1" in
   cd)
-    command=~/.bin/hub_cd
+    script=hub_cd
     ;;
   db)
-    command=~/.bin/hub_db
+    script=hub_db
     ;;
   errors)
-    command=~/.bin/hub_errors
+    script=hub_errors
     ;;
   *)
-    command=~/.bin/hub_set_env
+    script=hub_set_env
     ;;
 esac
 
-. $command "$@"
+. ~/.bin/$script "$@"
