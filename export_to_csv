@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mysql --defaults-extra-file=/etc/mysql/hubmaint.cnf -e "$2 into outfile '/var/lib/mysql_sec/export.csv' fields terminated by ',' lines terminated by '\n' $3" $4

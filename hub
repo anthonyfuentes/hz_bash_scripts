@@ -10,6 +10,9 @@ case "$1" in
   db)
     script=hub_db
     ;;
+  db_to_csv)
+    script=export_to_csv
+    ;;
   errors)
     script=hub_errors
     ;;
