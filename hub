@@ -5,22 +5,22 @@
 ######################
 case "$1" in
   cd)
-    script=hub_cd
+    script=cd
     ;;
   db)
-    script=hub_db
+    script=access_hub_db
     ;;
   db_to_csv)
     script=export_to_csv
     ;;
   errors)
-    script=hub_errors
+    script=tail_error_log
     ;;
   permissions)
-    script=hub_ogre_permissions
+    script=fix_fs_permissions
     ;;
   *)
-    script=hub_set_env
+    script=set_env
     ;;
 esac
 
