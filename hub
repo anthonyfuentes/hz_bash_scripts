@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#######################
+# Load .env if needed #
+#######################
+if [ -z "$HZ_BASH_ENV_LOADED" ]; then
+  source ~/.bin/.env
+fi
+
 ######################
 # Run correct script #
 ######################
@@ -18,9 +25,6 @@ case "$1" in
     ;;
   permissions)
     script=fix_fs_permissions
-    ;;
-  *)
-    script=set_env
     ;;
 esac
 
